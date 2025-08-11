@@ -69,8 +69,13 @@ fastify.get("/", async (request, reply) => {
     </head>
     <body>
       <div>
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+        <div class="circle circle-3"></div>
+        <div class="circle circle-4"></div>
+        <div class="circle circle-5"></div>
+        <div class="circle circle-6"></div>
         <h1>Habit to make today !</h1>
-
         <div class="habitsContainer">
           ${actualHabits
             .map(

@@ -18,6 +18,77 @@ body {
   justify-content: center;
 }
 
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 255, 255, 0.9),
+    rgba(128, 128, 128, 0.5) 70%
+  );
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3),
+    inset -4px -4px 10px rgba(0, 0, 0, 0.2),
+    inset 4px 4px 10px rgba(255, 255, 255, 0.5);
+  animation: float 6s ease-in-out infinite;
+}
+
+.circle-1 {
+  width: 100px;
+  height: 100px;
+  top: 10%;
+  left: 15%;
+  animation-delay: 0s;
+}
+.circle-2 {
+  width: 150px;
+  height: 150px;
+  top: 30%;
+  left: 30%;
+  animation-delay: 2s;
+}
+.circle-3 {
+  width: 80px;
+  height: 80px;
+  bottom: 15%;
+  left: 15%;
+  animation-delay: 4s;
+}
+.circle-4 {
+  width: 120px;
+  height: 120px;
+  bottom: 20%;
+  right: 25%;
+  animation-delay: 1s;
+}
+.circle-5 {
+  width: 90px;
+  height: 90px;
+  top: 50%;
+  right: 12%;
+  transform: translate(-50%, -50%);
+  animation-delay: 3s;
+}
+.circle-6 {
+  width: 140px;
+  height: 140px;
+  top: 15%;
+  right: 30%;
+  animation-delay: 5s;
+}
+
+/* Animation de flottement */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-40px);
+  }
+}
+
 h1 {
   font-size: 3em;
   color: white;

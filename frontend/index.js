@@ -1,3 +1,4 @@
+import { circleAnimation } from "./src/circleAnimation.js";
 import { newHabit } from "./src/newHabits.js";
 import confetti from "./libs/confetti.mjs";
 
@@ -95,4 +96,6 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("click");
     newHabit(); // Affiche le formulaire pour ajouter une nouvelle habitude
   });
+
+  circleAnimation();
 });
