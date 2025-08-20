@@ -94,6 +94,17 @@ h1 {
   color: white;
 }
 
+#login {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 1.5em;
+}
+
+#login:hover {
+  scale: 1.05;
+}
+
 .habitsContainer {
   display: flex;
   flex-direction: column;
@@ -168,20 +179,28 @@ h1 {
 }
 
 .newHabitContainer {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 220px;
-  height: 150px;
-  border-radius: 8px;
-  background-color: rgb(255, 255, 255, 0.5);
-  backdrop-filter: blur(5px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding-left: 20px;
-  margin: 20px auto;
+  height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 255, 255, 0.9),
+    rgba(0, 39, 54, 0.5) 70%
+  );
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3),
+    inset -4px -4px 10px rgba(0, 0, 0, 0.2),
+    inset 4px 4px 10px rgba(255, 255, 255, 0.5);
   position: absolute;
+  top: 40%;
+  right: 30%;
 }
-.newHabitContainer h2 {
-  padding: 0;
-  margin: 0 auto;
+.newHabitContainer h3 {
+  color: white;
+  font-size: 1.2em;
   text-align: center;
 }
 
@@ -193,7 +212,7 @@ h1 {
 
 .newHabitContainer input {
   padding: 10px;
-  border: 2px solid rgb(141, 80, 255);
+  border: 2px solid rgb(80, 162, 255);
   border-radius: 8px;
   margin-bottom: 10px;
 }
@@ -227,4 +246,100 @@ h1 {
 .newHabitContainer span:hover {
   scale: 1.2;
   cursor: pointer;
+}
+
+.connectContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 255, 255, 0.9),
+    rgba(0, 39, 54, 0.5) 70%
+  );
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3),
+    inset -4px -4px 10px rgba(0, 0, 0, 0.2),
+    inset 4px 4px 10px rgba(255, 255, 255, 0.5);
+  position: absolute;
+  top: 30%;
+  right: 9%;
+  transform: translate(50%, -50%);
+}
+
+.connectContainer.circle,
+.newHabitContainer.circle {
+  animation: none;
+}
+
+.connectTitle {
+  font-size: 2em;
+  color: white;
+}
+
+.connectForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.connectForm input {
+  padding: 10px;
+  border: 2px solid rgb(80, 162, 255);
+  border-radius: 8px;
+  width: 80%;
+  box-sizing: border-box;
+  font-size: 1em;
+  transition: border-color 0.3s ease;
+}
+
+.connectForm input:focus {
+  border-color: rgb(0, 119, 255);
+  outline: none;
+}
+.connectForm .passwordInput {
+  position: relative;
+}
+
+.connectForm .toggleBtn {
+  font-size: 1.2em;
+  color: rgb(95, 95, 95);
+  cursor: pointer;
+  position: absolute;
+  top: 48%;
+  right: 22%;
+  width: 20px;
+  height: 20px;
+}
+
+.connectForm button {
+  padding: 10px;
+  width: 60%;
+  border: none;
+  background-color: rgb(255, 94, 80);
+  color: white;
+  font-weight: bold;
+  font-size: 1em;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.connectForm button:hover {
+  background-color: rgb(248, 151, 142);
+}
+
+.account {
+  color: rgb(0, 119, 255);
+  font-size: 0.9em;
+  text-decoration: none;
+  border: none;
+  background: none;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.account:hover {
+  color: rgb(69, 143, 255);
 }

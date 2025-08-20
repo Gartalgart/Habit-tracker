@@ -1,5 +1,6 @@
 import { circleAnimation } from "./src/circleAnimation.js";
-import { newHabit } from "./src/newHabits.js";
+import NewHabit from "./src/NewHabits.js";
+import Connect from "./src/Connect.js";
 import confetti from "./libs/confetti.mjs";
 
 // On attend que tout le DOM (HTML) soit chargé avant d'exécuter le code.
@@ -9,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const habitBtn = document.querySelectorAll(".habit-btn");
   const container = document.querySelector(".habitsContainer");
   const addHabitBtn = document.querySelector(".add-btn");
+  const login = document.querySelector("#login");
 
   // Parcours de chaque carte d'habitude (chaque élément .habit-btn)
   habitBtn.forEach((btn) => {
@@ -91,10 +93,35 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  let isNewHabitClick = false;
+  const newHabitclick = new NewHabit();
+
   // Quand on clique sur "Add new habit", on exécute la fonction importée newHabit()
   addHabitBtn.addEventListener("click", () => {
-    console.log("click");
-    newHabit(); // Affiche le formulaire pour ajouter une nouvelle habitude
+    if (!isNewHabitClick) {
+      newHabitclick.displayNewHabit(); // Affiche le formulaire pour ajouter une nouvelle habitude
+      circleAnimation();
+      isNewHabitClick = true;
+    } else {
+      newHabitclick.closeNewHabit();
+      isNewHabitClick = false;
+    }
+  });
+
+  let isLoginClick = false;
+  const newLogin = new Connect();
+
+  login.addEventListener("click", () => {
+    if (!isLoginClick) {
+      newLogin.displayConnect();
+      newLogin.toggleEyePassWord();
+      newLogin.register();
+      circleAnimation();
+      isLoginClick = true;
+    } else {
+      newLogin.disconned();
+      isLoginClick = false;
+    }
   });
 
   circleAnimation();
